@@ -1,7 +1,8 @@
 ---
 
-- name: Install Software
-  apt:
-    name: "{{ software_packages }}"
-    state: present
+- name: Install & Config StrongSwan
+  include: ./strongswan.yml
+
+- name: Configure Firewall
+  include: ./ufw.yml
 
